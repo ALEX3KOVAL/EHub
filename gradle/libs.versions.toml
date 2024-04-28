@@ -1,0 +1,39 @@
+[versions]
+kotlin = "1.9.20"
+
+#libraries
+kotlinx-serialization = "1.5.1"
+coroutines = "1.8.0"
+pulsar = "3.1.2"
+icu4j = "72.1"
+exposed = "0.42.0"
+
+#plugins
+kotlin-serialization-plugin = "1.8.21"
+
+
+[bundles]
+pulsar = ["pulsar-client", "pulsar-client-api"]
+kotlinx-serialization = ["kotlinx-serialization-core", "kotlinx-serialization-json"]
+exposed = ["exposed-core", "exposed-dao", "exposed-jdbc", "exposed-json", "exposed-java-time"]
+
+[libraries]
+kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+
+kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+
+pulsar-client = { module = "org.apache.pulsar:pulsar-client", version.ref = "pulsar" }
+pulsar-client-api = { module = "org.apache.pulsar:pulsar-client-api", version.ref = "pulsar" }
+
+icu4j = { module = "com.ibm.icu:icu4j", version.ref = "icu4j" }
+
+exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed" }
+exposed-dao = { module = "org.jetbrains.exposed:exposed-dao", version.ref = "exposed" }
+exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
+exposed-json = { module = "org.jetbrains.exposed:exposed-json", version.ref = "exposed" }
+exposed-java-time = { module = "org.jetbrains.exposed:exposed-java-time", version.ref = "exposed" }
+
+[plugins]
+jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-serialization-plugin" }
